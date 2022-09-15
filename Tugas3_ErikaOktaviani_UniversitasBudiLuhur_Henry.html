@@ -1,0 +1,66 @@
+<script language="javascript">
+  //array of object
+  let m1 = { nama: "vigo", nilai: 75 };
+  let m2 = { nama: "fyto", nilai: 55 };
+  let m3 = { nama: "fernada", nilai: 95 };
+  let m4 = { nama: "yazid", nilai: 88 };
+  let m5 = { nama: "sefta", nilai: 25 };
+  let m6 = { nama: "fajar", nilai: 65 };
+
+  let mahasiswa = [m1, m2, m3, m4, m5, m6];
+  /*
+for(m of mahasiswa) {
+    let ket = ( m.nilai >= 60) ? "Lulus" : "Gagal";
+    document.write(`<br/>Nama : ${m.nama} - Nilai : ${m.nilai} - Keterangan : ${ket}`);
+}
+*/
+</script>
+<h3 align="center">Daftar Nilai Mahasiswa</h3>
+<table align="center" border="1" cellpadding="10">
+  <thead>
+    <tr bgcolor="pink">
+      <th>NO</th>
+      <th>NAMA</th>
+      <th>NILAI</th>
+      <th>KETERANGAN</th>
+      <th>GRADE</th>
+      <th>PREDIKAT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <script language="javascript">
+      let no = 1;
+      for (m of mahasiswa) {
+        //set kelulusan
+        let ket = m.nilai >= 60 ? "Lulus" : "Gagal";
+
+        var grade;
+        var predikat;
+        if (m.nilai >= 85) {
+          grade = "A";
+          predikat = "memuaskan";
+        } else if (m.nilai >= 75) {
+          grade = "B";
+          predikat = "bagus";
+        } else if (m.nilai >= 60) {
+          grade = "C";
+          predikat = "cukup";
+        } else if (m.nilai >= 50) {
+          grade = "D";
+          predikat = "kurang";
+        } else {
+          grade = "E";
+          predikat = "buruk";
+        }
+        document.write(`<tr bgcolor="">
+                        <td>${no++}</td>
+                        <td>${m.nama}</td>
+                        <td>${m.nilai}</td>
+                        <td>${ket}</td>
+                        <td>${grade}</td>
+                        <td>${predikat}</td>
+                    </tr>`);
+      }
+    </script>
+  </tbody>
+</table>
